@@ -1,12 +1,32 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f8f9fa;
+  background: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+:root {
+  --bg-color: #f8f9fa;
+  --text-color: #000;
+  --card-front: #d1e7dd;
+  --card-back: #f8d7da;
+  --green: #d1e7dd;
+  --red: #f8d7da;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #fff;
+  --card-front: #265d4a;
+  --card-back: #622f32;
+  --green: #265d4a;
+  --red: #622f32;
 }
 
 .container {
@@ -34,7 +54,7 @@ body {
   width: 100%;
   height: 220px;
   margin: 20px 0;
-  background: #e9ecef;
+  background: var(--card-front);
   border-radius: 12px;
   display: flex;
   justify-content: center;
@@ -43,6 +63,7 @@ body {
   transition: transform 0.4s ease;
   perspective: 1000px;
   overflow: hidden;
+  color: var(--text-color);
 }
 
 .front, .back {
@@ -57,11 +78,11 @@ body {
 }
 
 .front {
-  background: #d1e7dd;
+  background: var(--card-front);
 }
 
 .back {
-  background: #f8d7da;
+  background: var(--card-back);
   transform: rotateY(180deg);
 }
 
@@ -128,11 +149,11 @@ body {
 }
 
 .note-panel.green {
-  background-color: #d1e7dd;
+  background-color: var(--green);
 }
 
 .note-panel.red {
-  background-color: #f8d7da;
+  background-color: var(--red);
 }
 
 .note-panel ul {
