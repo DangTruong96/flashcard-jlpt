@@ -1,4 +1,3 @@
-// main.js
 const DATA = {
   N3: {
     "Bài 1": [
@@ -196,7 +195,6 @@ card.addEventListener("mousedown", e => {
   isDragging = true;
   startX = e.clientX;
 });
-
 document.addEventListener("mouseup", e => {
   if (!isDragging) return;
   const deltaX = e.clientX - startX;
