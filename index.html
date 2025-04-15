@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flashcard JLPT</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JLPT Flashcard Trainer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
@@ -27,8 +27,8 @@
     </div>
 
     <div class="flashcard" id="flashcard">
-      <div class="front" id="card-front"></div>
-      <div class="back" id="card-back"></div>
+      <div class="front" id="card-front">---</div>
+      <div class="back" id="card-back">---</div>
       <div class="audio" id="audio-button">🔊</div>
     </div>
 
@@ -44,7 +44,7 @@
     </div>
 
     <div class="filter">
-      <label>Lọc:</label>
+      <label for="filter">Lọc:</label>
       <select id="filter">
         <option value="all">Tất cả</option>
         <option value="known">Đã nhớ</option>
