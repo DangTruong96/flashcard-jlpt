@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcard JLPT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>JLPT Flashcard Trainer</h1>
+
+    <div class="selectors">
+      <label for="level">Cấp độ:</label>
+      <select id="level"></select>
+      <label for="lesson">Bài học:</label>
+      <select id="lesson"></select>
+    </div>
+
+    <div class="flashcard" id="flashcard">
+      <div class="front" id="card-front"></div>
+      <div class="back" id="card-back"></div>
+      <div class="audio" id="audio-button">🔊</div>
+    </div>
+
+    <div class="buttons">
+      <button id="prev">← Trước</button>
+      <button id="flip">Lật thẻ</button>
+      <button id="next">Tiếp →</button>
+    </div>
+
+    <div class="status-buttons">
+      <button id="mark-known">✅ Tôi đã nhớ</button>
+      <button id="mark-unknown">❌ Chưa nhớ</button>
+    </div>
+
+    <div class="filter">
+      <label>Lọc:</label>
+      <select id="filter">
+        <option value="all">Tất cả</option>
+        <option value="known">Đã nhớ</option>
+        <option value="unknown">Chưa nhớ</option>
+      </select>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
