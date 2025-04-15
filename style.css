@@ -1,0 +1,165 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.selectors, .filter, .status-buttons {
+  margin: 10px 0;
+}
+
+.selectors select, .filter select {
+  padding: 6px 12px;
+  margin-left: 5px;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.flashcard {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  margin: 20px 0;
+  background: #e9ecef;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  transition: transform 0.4s ease;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.front {
+  background: #d1e7dd;
+}
+
+.back {
+  background: #f8d7da;
+  transform: rotateY(180deg);
+}
+
+.flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+.audio {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.buttons button, .status-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0d6efd;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.buttons button:hover, .status-buttons button:hover {
+  background-color: #0b5ed7;
+}
+
+.flashcard.swipe-left {
+  animation: swipeLeft 0.2s ease;
+}
+
+.flashcard.swipe-right {
+  animation: swipeRight 0.2s ease;
+}
+
+@keyframes swipeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100px); opacity: 0.5; }
+}
+
+@keyframes swipeRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100px); opacity: 0.5; }
+}
+
+.note-panels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.note-panel {
+  flex: 1;
+  border-radius: 10px;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.note-panel.green {
+  background-color: #d1e7dd;
+}
+
+.note-panel.red {
+  background-color: #f8d7da;
+}
+
+.note-panel ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.note-panel li {
+  padding: 4px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+#progress-inner {
+  height: 100%;
+  background: linear-gradient(to right, #00c851, #33b5e5);
+  text-align: right;
+  color: white;
+  padding-right: 8px;
+  line-height: 20px;
+  border-radius: 10px;
+  width: 0%;
+}
