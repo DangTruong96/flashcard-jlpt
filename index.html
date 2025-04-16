@@ -9,12 +9,17 @@
 <body>
   <div class="container">
     <h1>JLPT Flashcard Trainer</h1>
-
     <div class="selectors">
       <label for="level">Cấp độ:</label>
-      <select id="level"></select>
+      <select id="level">
+        <option value="">Chọn cấp độ</option>
+      </select>
+
       <label for="lesson">Bài học:</label>
-      <select id="lesson"></select>
+      <select id="lesson">
+        <option value="">Chọn bài học</option>
+      </select>
+
       <label for="theme">Giao diện:</label>
       <select id="theme">
         <option value="light">Sáng</option>
@@ -22,48 +27,29 @@
       </select>
     </div>
 
-    <div class="progress-bar">
-      <div id="progress-inner">0%</div>
-    </div>
+    <div class="error-message" id="error-message" style="display: none;"></div>
 
-    <div class="flashcard" id="flashcard">
-      <div class="front" id="card-front">---</div>
-      <div class="back" id="card-back">---</div>
-      <div class="audio" id="audio-button">🔊</div>
-    </div>
-
-    <div class="buttons">
-      <button id="prev">← Trước</button>
-      <button id="flip">Lật thẻ</button>
-      <button id="next">Tiếp →</button>
-    </div>
-
-    <div class="status-buttons">
-      <button id="mark-known">✅ Tôi đã nhớ</button>
-      <button id="mark-unknown">❌ Chưa nhớ</button>
-    </div>
-
-    <div class="filter">
-      <label for="filter">Lọc:</label>
-      <select id="filter">
-        <option value="all">Tất cả</option>
-        <option value="known">Đã nhớ</option>
-        <option value="unknown">Chưa nhớ</option>
-      </select>
-    </div>
-
-    <div class="note-panels">
-      <div class="note-panel green">
-        <h3>✅ ĐÃ THUỘC</h3>
-        <ul id="known-box"></ul>
+    <div class="flashcard-section">
+      <div class="note-container" id="learned-note">
+        <h3>Đã thuộc</h3>
+        <ul id="learned-list"></ul>
       </div>
-      <div class="note-panel red">
-        <h3>❌ CHƯA THUỘC</h3>
-        <ul id="unknown-box"></ul>
+      <div class="flashcard-container" id="flashcard-container">
+        <!-- Các thẻ sẽ được thêm động qua JavaScript -->
       </div>
+      <div class="note-container" id="not-learned-note">
+        <h3>Chưa thuộc</h3>
+        <ul id="not-learned-list"></ul>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="audio-btn">Phát âm</button>
+      <button id="flip-btn">Lật thẻ</button>
+      <button id="mark-btn">Đánh dấu</button>
+      <button id="next-btn">Thẻ tiếp theo</button>
     </div>
   </div>
-
-  <script src="main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
